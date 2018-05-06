@@ -184,19 +184,19 @@ export default class App extends Component<Props> {
         <TouchableOpacity
           activeOpacity={0.7} style={styles.buttonView} onPress={this.getData}
           >
-          <Text style={styles.buttonText}>GET请求</Text>
+          <Text style={styles.buttonText}>GET Data</Text>
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.7} style={styles.buttonView} onPress={this.try}>
-          <Text style={styles.buttonText}>文件上传</Text>
+          <Text style={styles.buttonText}>File Upload</Text>
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.7} style={styles.buttonView} onPress={this.login}>
-          <Text style={styles.buttonText}>登录</Text>
+          <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.7} style={styles.buttonView} onPress={this.insertPersonal}>
-          <Text style={styles.buttonText}>添加题目</Text>
+          <Text style={styles.buttonText}>Post Data</Text>
         </TouchableOpacity>
         <Text>{this.state.applyNote}</Text>
         <ScrollView>
