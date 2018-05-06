@@ -36,7 +36,7 @@ export default class App extends Component<Props> {
     return (
       axios({
         method: 'get',
-        url: 'https://webapi.abcpen.com/api/course/getCourseInfoById?courseId=8888&version=v1.0.5'
+        url: 'https://xxxxx.xxxxx.com/api/course/getCourseInfoById?courseId=8888&version=v1.0.5'
       }).then((res) => {
           console.log(res);
           const data = res.data;
@@ -51,7 +51,7 @@ export default class App extends Component<Props> {
     )
   };
 
-  // POST 登录获取token user/login
+  // POST 登录获取token
   login = () => {
     return (
       axios({
@@ -59,10 +59,10 @@ export default class App extends Component<Props> {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         method: 'post',
-        url: 'https://pigai.abcpen.com/api/user/login',
+        url: 'https://xxxxx.xxxxx.com/api/user/login',
         data: qs.stringify({
-          mobile: '15267053970',
-          password: '123456',
+          mobile: 'xxxxxx',
+          password: 'xxxxxx',
           sourceType: '1'
         })
       }).then((res) => {
@@ -75,7 +75,7 @@ export default class App extends Component<Props> {
     )
   };
 
-  // POST 添加题目 examQuestion/insertPersonal
+  // POST 添加题目
   insertPersonal = () => {
     const token = this.state.token;
     // console.log('token==',token)
@@ -85,12 +85,9 @@ export default class App extends Component<Props> {
         'Token': token
       },
       method: 'post',
-      url: 'https://pigai.abcpen.com/api/examQuestion/insertPersonal',
+      url: 'https://xxxxx.xxxxx.com/api/examQuestion/insertPersonal',
       data: qs.stringify({
         questionType: `1`,
-        publicStatus: `2`,
-        answers: `["A"]`,
-        options: `[{"text":"选项1"},{"text":"选项2"},{"text":"选项3"},{"text":"选项4",}]`,
         content: `{"text":"测试题目"}`,
         resolve: `{"text":"解析部分"}`,
       })
@@ -101,7 +98,7 @@ export default class App extends Component<Props> {
     })
   };
 
-  // POST 上传文件 file/upload
+  // POST 上传文件
   uploadFile = (data) => {
     let form = new FormData();
     form.append('uploadFile', this.state.file);
@@ -112,7 +109,7 @@ export default class App extends Component<Props> {
           'Content-Type': 'multipart/form-data'
         },
         method: 'post',
-        url: 'http://pigai.abcpen.com/api/user/login',
+        url: 'http://xxxx.xxxxx.com/api/user/login',
         data: form
       })
     )
